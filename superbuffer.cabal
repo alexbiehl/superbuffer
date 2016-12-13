@@ -1,4 +1,4 @@
--- This file has been generated from package.yaml by hpack version 0.14.0.
+-- This file has been generated from package.yaml by hpack version 0.15.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -30,11 +30,13 @@ library
   build-depends:
       base >= 4.8 && < 5
     , bytestring < 0.11
+    , primitive
+    , ghc-prim
   exposed-modules:
       Data.ByteString.SuperBuffer
       Data.ByteString.SuperBuffer.Pure
   other-modules:
-      Paths_superbuffer
+      Data.Primitive.PrimRef
   default-language: Haskell2010
 
 test-suite spec
@@ -47,6 +49,8 @@ test-suite spec
   build-depends:
       base >= 4.8 && < 5
     , bytestring < 0.11
+    , primitive
+    , ghc-prim
     , HTF < 0.14
     , QuickCheck < 2.10
     , async
@@ -62,6 +66,8 @@ benchmark sbuf-bench
   build-depends:
       base >= 4.8 && < 5
     , bytestring < 0.11
+    , primitive
+    , ghc-prim
     , criterion < 1.2
     , superbuffer
     , buffer-builder

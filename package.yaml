@@ -16,6 +16,8 @@ extra-source-files:
 dependencies:
   - base >= 4.8 && < 5
   - bytestring < 0.11
+  - primitive
+  - ghc-prim
 
 ghc-options: -Wall
 
@@ -24,6 +26,8 @@ library:
   exposed-modules:
     - Data.ByteString.SuperBuffer
     - Data.ByteString.SuperBuffer.Pure
+  other-modules:
+    - Data.Primitive.PrimRef
   c-sources: cbits/superbuffer.c
 
 tests:
